@@ -4,12 +4,13 @@ function alterarStatus(id) {
     let imagem = game.querySelector('.dashboard__item__img');
 
     if(imagem.classList.contains('dashboard__item__img--rented')){
-        imagem.classList.remove('dashboard__item__img--rented');
-        botao.classList.remove('dashboard__item__button--return');
-        botao.innerHTML = "Alugar";
+        let confirm = prompt("Você deseja devolver o jogo ?").toLowerCase();
 
-        console.log(imagem.classList);
-        console.log(botao.classList);
+        if(confirm == 'sim'){
+            imagem.classList.remove('dashboard__item__img--rented');
+            botao.classList.remove('dashboard__item__button--return');
+            botao.innerHTML = "Alugar";
+        }
     }
     else{
         imagem.classList.add('dashboard__item__img--rented');
